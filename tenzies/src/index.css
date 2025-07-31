@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #0B2434;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main {
+    background-color: #F5F5F5;
+    width: 80vh;
+    height: 80vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+        font-family: Inter;
+        font-weight: 700;
+        font-size: calc(80vh * 0.08);
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: -3%;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0;
+        padding-bottom: calc(80vh * 0.01);
+    }
+
+    .instructions {
+        font-family: Inter;
+        font-weight: 400;
+        font-size: calc(80vh * 0.04);
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: -3%;
+        text-align: center;
+        vertical-align: middle;
+        width: calc(80vh * 0.78);
+        margin: 0;
+        padding-top: calc(80vh * 0.01);
+        padding-bottom: calc(80vh * 0.075);
+        color: #4A4E74;
+    }
+
+    .dice-box {
+        width: calc(80vh * 0.78);
+        height: calc(80vh * 0.28);
+        border: 1px solid green;
+    }
+
+    .roll-button {
+        width: calc(80vh * 0.29);
+        height: calc(80vh * 0.11);
+        background-color: #5035FF;
+        border-radius: 3.81px;
+        font-family: Inter;
+        font-weight: 700;
+        font-size: calc(80vh * 0.05);
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: center;
+        vertical-align: middle;
+        color: white;
+        border: none;
+        margin-top: calc(80vh * 0.08);
+    }
+}
+
+/* 
+18.56 space between dice 
+90px tall box 
+*/
