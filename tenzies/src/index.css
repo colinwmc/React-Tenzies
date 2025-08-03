@@ -22,7 +22,7 @@ body {
     align-items: center;
 
     .title {
-        font-family: Inter;
+        font-family: Karla;
         font-weight: 700;
         font-size: calc(80vh * 0.08);
         leading-trim: NONE;
@@ -35,7 +35,7 @@ body {
     }
 
     .instructions {
-        font-family: Inter;
+        font-family: Karla;
         font-weight: 400;
         font-size: calc(80vh * 0.04);
         leading-trim: NONE;
@@ -43,7 +43,7 @@ body {
         letter-spacing: -3%;
         text-align: center;
         vertical-align: middle;
-        width: calc(80vh * 0.78);
+        width: calc(80vh * 0.73);
         margin: 0;
         padding-top: calc(80vh * 0.01);
         padding-bottom: calc(80vh * 0.075);
@@ -53,7 +53,36 @@ body {
     .dice-box {
         width: calc(80vh * 0.78);
         height: calc(80vh * 0.28);
-        border: 1px solid green;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        /* display: grid;
+        grid-template: auto auto / repeat(5, 1fr); */
+        gap: calc(80vh * 0.03);
+
+        .die {
+            width: calc(80vh * 0.11);
+            height: calc(80vh * 0.11);
+            color: #2B283A;
+            background-color: white;
+            font-family: Karla;
+            font-weight: 700;
+            font-size: calc(80vh*0.06);
+            leading-trim: NONE;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: center;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+            border-radius: calc(80vh * 0.015);
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .held {
+            background-color: #59E391 !important;
+        }
     }
 
     .roll-button {
@@ -61,7 +90,7 @@ body {
         height: calc(80vh * 0.11);
         background-color: #5035FF;
         border-radius: 3.81px;
-        font-family: Inter;
+        font-family: Karla;
         font-weight: 700;
         font-size: calc(80vh * 0.05);
         leading-trim: NONE;
@@ -72,6 +101,7 @@ body {
         color: white;
         border: none;
         margin-top: calc(80vh * 0.08);
+        cursor: pointer;
     }
 }
 
