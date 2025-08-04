@@ -9,7 +9,7 @@ export default function App() {
   const diceElements = diceArray.map(die => (<Die key={die.id} id={die.id} value={die.value} isHeld={die.isHeld} hold={hold}></Die>));
 
   let gameWon = diceArray.every(die => die.isHeld) && diceArray.every(die => die.value === diceArray[0].value)
-    
+
   function generateAllNewDice() {
     let values = [];
     for (let i = 0; i < 10; i++) {
@@ -22,36 +22,45 @@ export default function App() {
     return values;
   }
 
-  function rollDice(){
-      setDiceArray(oldDice => oldDice.map(die =>
-            !die.isHeld ?
-                { ...die, value: Math.floor(Math.random() * 6 + 1) } :
-                die
-        ))
+  function rollDice() {
+    setDiceArray(oldDice => oldDice.map(die =>
+      !die.isHeld ?
+        { ...die, value: Math.floor(Math.random() * 6 + 1) } :
+        die
+    ))
   }
 
-  function resetGame(){
+  function resetGame() {
     setDiceArray(generateAllNewDice());
   }
 
   function hold(id) {
-        setDiceArray(oldDice => oldDice.map(die =>
-            die.id === id ?
-                { ...die, isHeld: !die.isHeld } :
-                die
-        ))
+    setDiceArray(oldDice => oldDice.map(die =>
+      die.id === id ?
+        { ...die, isHeld: !die.isHeld } :
+        die
+    ))
+  }
+
+  React.useEffect(() => {
+    if (gameWon) {
+      document.getElementById('roll-button').focus();
     }
+  }, [gameWon])
 
 
   return (
     <main className="main">
       {gameWon && <Confetti></Confetti>}
+      <div aria-live="polite" className="sr-only">
+        {gameWon && <p>Congratulations! You won! Press "New Game" to start again.</p>}
+      </div>
       <h1 className="title">Tenzies</h1>
       <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
       <div className="dice-box">
         {diceElements}
       </div>
-      <button onClick={gameWon ? resetGame : rollDice} className="roll-button">{gameWon ? 'New Game' : 'Roll'}</button>
+      <button id="roll-button" onClick={gameWon ? resetGame : rollDice} className="roll-button">{gameWon ? 'New Game' : 'Roll'}</button>
     </main>
   )
 }
