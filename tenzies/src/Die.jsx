@@ -4,6 +4,6 @@ export default function Die(props){
         classes.push("held");
     }
     return (
-        <button className={classes.join(" ")}>{props.value}</button>
+        <button onClick={() => props.hold(props.id)} className={classes.join(" ")}>{props.value}</button>
     )
 }
